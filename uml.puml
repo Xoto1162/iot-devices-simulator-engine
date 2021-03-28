@@ -1,0 +1,110 @@
+@startuml
+
+package iotsimulator {
+    package iotsimulator.device {
+        package iotsimulator.device.behavior {
+
+            interface Behavior<T> {
+                + T startValue()
+                + T nextValue(T oldVal, LocalDateTime time)
+            }
+
+            class FixedValue<T> implements Behavior {
+                - T m_value
+
+                + FixedValue(T value)
+            }
+
+            class IncrementNumber implements Behavior {
+                - double m_start
+                - double m_step
+
+                + IncrementNumber(double start, double step)
+            }
+
+            class RandomInt implements Behavior {
+                - int m_max
+                - int m_min
+
+                + RandomInt(int min, int max)
+            }
+
+        }
+
+        class DataPoint<T> {
+            - String m_name
+            - T m_value
+            - Behavior<T> m_behavior
+
+            + DataPoint(String name, Behavior<T> behavior)
+            + void nextStep()
+            + String getName()
+            + T getValue()
+        }
+
+        class Device {
+            - String m_name
+            - String m_id
+            - Simulation m_simulation
+            - double m_messagesBySecond
+            - long m_lastMessageSent
+            - LocalDateTime m_datetime
+            - Map<String, DataPoint> m_dataPoints
+
+            + Device(String name, String id, double messagesBySecond)
+            + boolean update()
+            - void nextStep()
+            + JsonObject getCurrentMessage()
+            + String getId()
+            + void setSimulation()
+            + void addDataPoint(DataPoint dataPoint)
+        }
+
+    }
+
+    class Simulation {
+        - String m_name
+        - Map<String, Device> m_devices
+        - List<Output> m_outputs
+
+        + Simulation(String name)
+        + void addDevice(Device device)
+        + void addOutput(Output output)
+        + void update()
+        + List<Output> getOutputs()
+    }
+
+    package iotsimulator.output {
+        interface Output {
+            + void sendMessage(String message)
+        }
+
+        class Console implements Output {
+            + Console()
+        }
+
+        class Mqtt implements Output {
+            - String m_host
+            - int m_port
+            - String m_topic
+            - FutureConnection m_connection
+
+            + Mqtt(String host, int port, String topic)
+        }
+    }
+
+}
+
+package java.lang {
+    interface Runnable {
+        + void run()
+    }
+}
+
+Runnable <|.. Simulation
+Behavior "1" --o "1" DataPoint
+DataPoint "*" --o "1" Device
+Simulation "1" o-- "*" Output
+Simulation "1" o-- "*" Device
+
+@enduml

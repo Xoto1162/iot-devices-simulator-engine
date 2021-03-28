@@ -1,0 +1,20 @@
+# IoT Devices Simulator Engine
+
+This project provides a basic architecture in Java to build IoT devices simulation.
+
+You can create your own simulation in the `App.java`. A basic example is already provided in this file.
+
+## Features
+
+- Different behavior implemented for devices: FixedValue, IncrementNumber, RandomInt
+- Mqtt & Console output
+
+## Possible improvement
+
+- Create a GUI to build you simulation without lines of code 
+
+## UML
+
+You can use PlantUML to visualize to UML in the file `uml.puml`
+
+![](http://www.plantuml.com/plantuml/png/ZLLTRziW57tdLw0-kSk7jFUegjgfKgUrdPfehnCnToaT1iz0bAdhVn_XsiGcn8rLrP1xkEVudWjS6yiQwof9ICtAtsm3L6XhHEKaixgXRuJw9nUQSzYA4bh41wZv6bxOLeI4XFOUeImqlvZFSzCY5gihp3bu9dH5WzGVJ3eeBhC01Rislg9QSZ-Sqc-wPF8Bix0I5L3h_mtNlW_rb98PG-_43dZ8j5SZgbf21SgQA3AZSEO5L3-t-qKaewvDYU82wWmTzwfi0lEZgzRGdAs4QxUMuEM4aeq3eCx8JPaBN80MJ6cSGNt6LpmpnNLrh-pP-eMoNbl5TgTZGkLaHweYm8IQ8fxjiZgJ8ShrpSA-QxyiwSJ0lhIDK1ilGB4AIDx_zFTUPtj4jnE6yYS7sgBbs3DC1ukxfPV9qgqMF3J_qXjIfD4stGRieyzu55xvIBghCaL9DljOETAOu6a4JmUXbO-QE24dUhG2OzW6pCtV9PHQfTca3YnUfdr0v1AKJK23Oy2ZkHzQSQJvWTKBr3qz67A5U9oOr3UipD2qTY9ut2hfDwGkhBMMm1HrjMTAJPfzuF1NezNJ-XLAk_VorZKDgAuM8-rmpuji9ncm1uVo4CRveL_ZYCOg9PqKNzXCFV_Vo7WpfQPWjOCZOMH8psDXxEB9sTe5otGOzVoQz8ZxVg7OvElGLNnHvChXaAx05qNA57TiwcIerNk1GzDYtidfQnSvi7395VgKXWQcAjwrH5Ted8xi-bkjZ9RGFxVp72roz0Xv-6FjMAQq2rwqiIHtzjUwiQSMMLsBCWdUEUiQy0eLbEsXKyP9ifs3ogv0UmLuWUmfuxOE7BqFxIppVvrZhspBvf9vy1iPUlJib69h2JwGEDGu5UttgI9myMy-xtKkYJVdnUSBEflfy8vxaCGHlVXqY6CZaqEQyAkUpG8AhSX7urfo3OgxIfB_)
