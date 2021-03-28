@@ -11,7 +11,7 @@ You can create your own simulation in the `App.java`. A basic example is already
 
 ## Possible improvement
 
-- Create a GUI to build you simulation without lines of code 
+- Create a GUI to build your simulation without lines of code 
 
 ## UML
 
